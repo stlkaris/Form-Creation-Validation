@@ -1,6 +1,6 @@
 async function fetchUserData() {
 
-    const apiUrl = 'https://jsonplaceholder.typicode.com/user';
+    const apiUrl = 'https://jsonplaceholder.typicode.com/users';
     const dataContainer = document.getElementById('api-data');
 
     try{
@@ -21,13 +21,12 @@ async function fetchUserData() {
 
     } catch  (error) {
         dataContainer.innerHTML = '';
-        dataContainer.textContent = 'Failed to load user data';
+        dataContainer.textContent = 'Failed to load user data.';
+        console.error('Error fetching data:', error);
     }
 
 
 }
 
-document.addEventListener = ('DOMContentLoaded', () => {
-    fetchUserData();
-});
+document.addEventListener('DOMContentLoaded', fetchUserData);
    
